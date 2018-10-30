@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c5d52ac442944ee0ad17c934bbbe9bb8" Name="Diagram1">
+        <EntityTypeShape EntityType="opsdbModel.OPS_ManageDowntime" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="opsdbModel.OPS_DataEntry" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="opsdbModel.OPS_ManageShifts" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="opsdbModel.OPS_ManageAssets" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="opsdbModel.OPS_DeletedDataEntry" Width="1.5" PointX="5.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Manage Data Entry";
+}
+
+<div class="content-wrapper content-wrapper--with-bg">
+    <div class="page-content">
+        <div class="one">
+            <div class="row mb-4">
+                <div class="col-lg-12">
+                    <div class="alert shadow text-uppercase hidden-xs-down gap-25" role="alert">
+                        <span class="right-15">Manage Data Entry</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card" data-border-color="cyan">
+                        <div class="card-header" data-background-color="cyan">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form id="searchDataEntryFrm" name="searchDataEntryFrm">                                    
+                                            <select name="SelectedShifts" id="SelectedShifts" class="mr-2">
+                                                @*<option value="0">All Shifts</option>*@
+                                                <option value="1" @(HttpContext.Current.Session["shiftID"].ToString() == "7" ? "selected" : "")>Day Shift</option>
+                                                <option value="2" @(HttpContext.Current.Session["shiftID"].ToString() == "19" ? "selected" : "")>Night Shift</option>
+                                            </select>
+                                    
+                                            <input type="text" class="commondatepicker" name="searchDate" id="searchDate" autocomplete="off" data-date-end-date="0d" />
+                                            <input type="button" class="btn btn-light custom-searchDataEntry" id="Search" value="Search" />
+                                        
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <form id="form">
+                            <div class="card-content ds-responsive-tables">
+                                <table class="table table-hover table-striped" id="customTable">
+                                    <thead class="">
+                                        <tr>
+                                            <th>Shift Time</th>
+                                            <th>CVO1 (t)</th>
+                                            <th>Rougher (t)</th>
+                                            <th>HMC (t)</th>
+                                            <th>Floc Use</th>
+                                            <th>Floc Batch #</th>
+                                            <th>Slime (t)</th>
+                                            <th>Slime (%)</th>
+                                            <th>Tails 1</th>
+                                            <th>Tails 2</th>
+                                            <th>Reason</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ManageDataEntry"></tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/managedataentry")    
+    <script>
+        var test = '@User.IsInRole("Administrators")';
+        if (test != 'False') {
+            sessionStorage.setItem("IsAdmin", "1");
+        }
+
+    </script>
+}
+

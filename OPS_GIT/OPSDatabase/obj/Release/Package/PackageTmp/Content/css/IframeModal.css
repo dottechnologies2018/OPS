@@ -1,0 +1,95 @@
+﻿
+        body {
+        background: transparent;
+       font-family:'arial', sans-serif;
+       font-size:13px;
+       line-height:1.42857143;
+       color:#777;
+       margin:0;
+       overflow-x: hidden;
+       font-weight:400;
+        }
+
+        label.error:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #bf3e3e;
+    position: absolute;
+    top: -5px;
+}
+
+label.error {
+    color: #fff;
+    position: absolute;
+    bottom: 0px;
+    font-size: 11px;
+    background: #bf3e3e;
+    padding: 2px 5px;
+    left: 10px;
+    border-radius: 2px;
+}
+
+.form-group {
+    position: relative;
+}
+
+        .activeIframe{
+            height:560px;
+        }
+        .frmAddNewDowntime input[type="text"], .frmAddNewDowntime select, .frmAddNewDowntime textarea {
+            width: 100%;
+            height: 40px;
+            background: rgba(0,0,0,.05)!important;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 0px;
+            padding-left: 1rem;
+            font-size: 13px;
+        }
+
+        .frmAddNewDowntime textarea {
+            height: auto;
+        }
+
+        .frmAddNewDowntime .btn-success {
+            color: #fff;
+            background-color: #45c2c8!important;
+            border-color: #45c2c8!important;
+            box-shadow: none;
+        }
+
+        .frmAddNewDowntime .btn {
+    border: none;
+    padding: 0.5rem 1.5rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0;
+    height:44px;
+}
+
+      .frmAddNewDowntime  label {
+    font-weight: normal;
+}
+
+.frmAddNewDowntime label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.pl-0{
+    padding-left:5px;
+}
+
+.pr-0{
+    padding-right:5px;
+}
+
+.bootstrap-datetimepicker-widget{
+    position:absolute !important;
+
+}
+    

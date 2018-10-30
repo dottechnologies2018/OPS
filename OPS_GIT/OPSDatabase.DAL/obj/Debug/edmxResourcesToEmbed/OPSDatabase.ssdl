@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="opsdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="OPS_DataEntry">
+    <Key>
+      <PropertyRef Name="DataEntry_Id" />
+    </Key>
+    <Property Name="DataEntry_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CV01" Type="varchar" MaxLength="50" />
+    <Property Name="Rougher" Type="varchar" MaxLength="50" />
+    <Property Name="HMC" Type="varchar" MaxLength="50" />
+    <Property Name="FlocUse" Type="varchar" MaxLength="50" />
+    <Property Name="FlocBatch" Type="varchar" MaxLength="50" />
+    <Property Name="Slime" Type="varchar" MaxLength="50" />
+    <Property Name="SlimePer" Type="varchar" MaxLength="50" />
+    <Property Name="Tails1" Type="varchar" MaxLength="50" />
+    <Property Name="Tails2" Type="varchar" MaxLength="50" />
+    <Property Name="Reason" Type="varchar" MaxLength="500" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ManageShifts_Id" Type="int" />
+    <Property Name="AD_Id" Type="nvarchar" MaxLength="500" />
+    <Property Name="Unique_ID" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ShiftTime" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OPS_DeletedDataEntry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataEntry_Id" Type="int" />
+    <Property Name="CV01" Type="varchar" MaxLength="50" />
+    <Property Name="Rougher" Type="varchar" MaxLength="50" />
+    <Property Name="HMC" Type="varchar" MaxLength="50" />
+    <Property Name="FlocUse" Type="varchar" MaxLength="50" />
+    <Property Name="FlocBatch" Type="varchar" MaxLength="50" />
+    <Property Name="Slime" Type="varchar" MaxLength="50" />
+    <Property Name="SlimePer" Type="varchar" MaxLength="50" />
+    <Property Name="Tails1" Type="varchar" MaxLength="50" />
+    <Property Name="Tails2" Type="varchar" MaxLength="50" />
+    <Property Name="Reason" Type="varchar" MaxLength="500" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ManageShifts_Id" Type="int" />
+    <Property Name="AD_Id" Type="nvarchar" MaxLength="500" />
+    <Property Name="Unique_ID" Type="nvarchar" MaxLength="500" />
+    <Property Name="ShiftTime" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OPS_ManageAssets">
+    <Key>
+      <PropertyRef Name="Assets_Id" />
+    </Key>
+    <Property Name="Assets_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssetType" Type="varchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OPS_ManageDowntime">
+    <Key>
+      <PropertyRef Name="ManageDowntime_Id" />
+    </Key>
+    <Property Name="ManageDowntime_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Assets" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="From" Type="nvarchar" MaxLength="100" />
+    <Property Name="To" Type="nvarchar" MaxLength="100" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Time_Diff" Type="int" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Assets_Id" Type="int" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OPS_ManageShifts">
+    <Key>
+      <PropertyRef Name="ManageShifts_Id" />
+    </Key>
+    <Property Name="ManageShifts_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShiftsName" Type="varchar" MaxLength="50" />
+    <Property Name="Start_Time" Type="int" />
+  </EntityType>
+  <EntityContainer Name="opsdbModelStoreContainer">
+    <EntitySet Name="OPS_DataEntry" EntityType="Self.OPS_DataEntry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OPS_DeletedDataEntry" EntityType="Self.OPS_DeletedDataEntry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OPS_ManageAssets" EntityType="Self.OPS_ManageAssets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OPS_ManageDowntime" EntityType="Self.OPS_ManageDowntime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OPS_ManageShifts" EntityType="Self.OPS_ManageShifts" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

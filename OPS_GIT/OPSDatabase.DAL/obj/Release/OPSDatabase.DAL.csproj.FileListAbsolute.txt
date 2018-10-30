@@ -1,0 +1,10 @@
+E:\Gursharanbir\Projects\OPSDatabase\OPSDatabase\OPSDatabase.DAL\bin\Release\OPSDatabase.DAL.dll.config
+E:\Gursharanbir\Projects\OPSDatabase\OPSDatabase\OPSDatabase.DAL\bin\Release\OPSDatabase.DAL.dll
+E:\Gursharanbir\Projects\OPSDatabase\OPSDatabase\OPSDatabase.DAL\bin\Release\OPSDatabase.DAL.pdb
+E:\Gursharanbir\Projects\OPSDatabase\OPSDatabase\OPSDatabase.DAL\bin\Release\EntityFramework.dll
+E:\Gursharanbir\Projects\OPSDatabase\OPSDatabase\OPSDatabase.DAL\bin\Release\EntityFramework.SqlServer.dll
+E:\Gursharanbir\Projects\OPSDatabase\OPSDatabase\OPSDatabase.DAL\bin\Release\EntityFramework.xml
+E:\Gursharanbir\Projects\OPSDatabase\OPSDatabase\OPSDatabase.DAL\bin\Release\EntityFramework.SqlServer.xml
+E:\Gursharanbir\Projects\OPSDatabase\OPSDatabase\OPSDatabase.DAL\obj\Release\OPSDatabase.DAL.dll
+E:\Gursharanbir\Projects\OPSDatabase\OPSDatabase\OPSDatabase.DAL\obj\Release\OPSDatabase.DAL.pdb
+E:\Gursharanbir\Projects\OPSDatabase\OPSDatabase\OPSDatabase.DAL\obj\Release\OPSDatabase.DAL.csprojResolveAssemblyReference.cache

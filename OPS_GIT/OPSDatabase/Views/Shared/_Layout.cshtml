@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Bootstrap -->
+    <title>@ViewBag.Title - OPS DATABASE</title>
+    @*@Styles.Render("~/Content/css")*@
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
+    <link href="~/Content/css/fontawesome-all.css" rel="stylesheet" />  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="header sidebar-is-reduced">
+
+    <!--=======================
+           HEADER START
+    ========================-->
+    <header class="l-header shadow">
+        <nav class="navbar navbar-expand-lg navbar-light bg-faded">
+            <div class="c-header-icon row js-hamburger">
+                <div class="hamburger-toggle"><span class="bar-top"></span><span class="bar-mid"></span><span class="bar-bot"></span></div>
+            </div>
+            <a class="navbar-brand" href="#index.html">OPS DATABASE</a>
+            <div class="navbar-toggler c-header-icon-2 row" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger-toggle-2"><span class="bar-top"></span><span class="bar-mid"></span><span class="bar-bot"></span></div>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    @*<li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="c-header-icon"><span class="c-badge c-badge--header-icon animated shake">87</span><i class="fas fa-bell"></i></div>
+                            </a>
+                        </li>*@
+                    @Html.Partial("_LoginPartial")
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--=======================
+           HEADER CLOSE
+    ========================-->
+    <!--=======================
+           SIDEBAR START
+    ========================-->
+    <div class="flex-parent shadow">
+        <div class="l-sidebar__content">
+            <nav class="c-menu js-menu">
+                <ul class="u-list shadow">
+                    <li class="c-menu__item" data-toggle="tooltip" title="Dashboard">
+                        <div class="c-menu__item__inner">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <div class="c-menu-item__title"><span>Dashboard</span></div>
+                        </div>
+                    </li>
+                    <li class="c-menu__item" data-toggle="tooltip" title="Manage Downtime">
+                        <div class="c-menu__item__inner">
+                            <i class="fas fa-cogs"></i>
+                            <div class="c-menu-item__title"><a href="@Url.Action("ManageDowntime","Home")"><span>Manage Downtime</span></a></div>
+                        </div>
+                    </li>
+                    <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Manage Assets">
+                        <div class="c-menu__item__inner">
+                            <i class="fas fa-truck"></i>
+                            <div class="c-menu-item__title"><a href="@Url.Action("ManageAssets","Home")"><span>Manage Assets</span></a></div>                          
+                        </div>
+                    
+                    </li>
+                  
+                    <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Manage Data Entry">
+                        <div class="c-menu__item__inner">
+                            <i class="fas fa-users"></i>
+                            <div class="c-menu-item__title"><a href="@Url.Action("ManageDataEntry","Home")"><span>Manage Data Entry</span></a></div>
+                        </div>
+                    </li>
+                    <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Reporting">
+                        <div class="c-menu__item__inner">
+                            <i class="fas fa-file"></i>
+                            <div class="c-menu-item__title"><a href="@Url.Action("ManageReporting","Home")"><span>Reporting</span></a></div>
+                            
+                          </div>
+                       
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!--=======================
+           SIDEBAR CLOSE
+    ========================-->
+    <!--=======================
+           MAIN PANNEL START
+    ========================-->
+    <main class="l-main">
+        @RenderBody()
+    </main>
+    <!--=======================
+           MAIN PANNEL CLOSE
+    ========================-->
+    <!--=======================
+           FOOTER START
+    ========================-->
+    <footer class="footer text-center shadow">
+        <p> &copy; 2018 OPS DATABASE - All right Reserved</p>
+    </footer>
+    <!--=======================
+           FOOTER CLOSE
+    ========================-->
+    <!-- Add New Manage Downtime Modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="AddNewDownTimeModal">
+        <div class="modal-dialog">
+            <div class="modal-content ds-cus-modal signup modelIframe">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h1 id="AddNewDownTimeModalHeading">Add New Downtime</h1>
+                <br>
+                <iframe id="iframeAddNewDownTimeModal" src="" height="100%" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add New Asset Modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="AddNewAssetModal">
+        <div class="modal-dialog">
+            <div class="modal-content ds-cus-modal signup">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h1 id="AddNewAssetModalHeading">Add New Assets</h1>
+                <br>
+                <form id="frmAddNewAsset" name="frmAddNewAsset">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label>Assets</label>
+                            <input type="text" class="form-control" name="AssetType" id="AssetType" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="form-group mb-0">
+                        <div class="col-xs-12">
+                            <button type="button" id="btnSubmit" data-request-url="@Url.Action("AddNewManageAsset","Home")" class="btn btn-block btn-success">Submit</button>
+                            <button type="button" id="btnUpdate" data-request-url="@Url.Action("AddNewManageAsset","Home")" class="btn btn-block btn-success d-none">Update</button>
+                        </div>
+                    </div>
+                    <input type="hidden" name="Assets_Id" id="Assets_Id" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/ops")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+
+<script>
+    $(function () {
+        setNavigation();
+
+        $(".commondatepicker").datepicker({
+            autoclose: true,
+            orientation: "bottom"
+            , format: 'dd/mm/yyyy'
+        });
+
+        $('.commondatepicker').datepicker('setDate', 'now');
+
+        $("#From").datepicker({
+            autoclose: true,
+            orientation: "bottom"
+            ,format: 'dd/mm/yyyy'
+        }).on('changeDate', function (selected) {
+            var minDate = new Date(selected.date.valueOf());
+            $('#To').datepicker('setStartDate', minDate);
+        });
+
+        $("#To").datepicker({
+            autoclose: true,
+            orientation: "bottom"
+            ,format: 'dd/mm/yyyy'
+        }).on('changeDate', function (selected) {
+            var maxDate = new Date(selected.date.valueOf());
+            $('#From').datepicker('setEndDate', maxDate);
+        });
+    });
+
+    function setNavigation() {
+        var path = window.location.pathname;
+        path = path.replace(/\/$/, "");
+        path = decodeURIComponent(path);
+
+        $(".c-menu-item__title a").each(function () {
+            var href = $(this).attr('href');
+            if (path === href) {
+                $(this).closest('li').addClass('is-active');
+            }
+        })
+    }
+
+
+</script>
+
+

@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="opsdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="OPS_DataEntry">
+          <Key>
+            <PropertyRef Name="DataEntry_Id" />
+          </Key>
+          <Property Name="DataEntry_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CV01" Type="varchar" MaxLength="50" />
+          <Property Name="Rougher" Type="varchar" MaxLength="50" />
+          <Property Name="HMC" Type="varchar" MaxLength="50" />
+          <Property Name="FlocUse" Type="varchar" MaxLength="50" />
+          <Property Name="FlocBatch" Type="varchar" MaxLength="50" />
+          <Property Name="Slime" Type="varchar" MaxLength="50" />
+          <Property Name="SlimePer" Type="varchar" MaxLength="50" />
+          <Property Name="Tails1" Type="varchar" MaxLength="50" />
+          <Property Name="Tails2" Type="varchar" MaxLength="50" />
+          <Property Name="Reason" Type="varchar" MaxLength="500" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ManageShifts_Id" Type="int" />
+          <Property Name="AD_Id" Type="nvarchar" MaxLength="500" />
+          <Property Name="Unique_ID" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="ShiftTime" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OPS_DeletedDataEntry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataEntry_Id" Type="int" />
+          <Property Name="CV01" Type="varchar" MaxLength="50" />
+          <Property Name="Rougher" Type="varchar" MaxLength="50" />
+          <Property Name="HMC" Type="varchar" MaxLength="50" />
+          <Property Name="FlocUse" Type="varchar" MaxLength="50" />
+          <Property Name="FlocBatch" Type="varchar" MaxLength="50" />
+          <Property Name="Slime" Type="varchar" MaxLength="50" />
+          <Property Name="SlimePer" Type="varchar" MaxLength="50" />
+          <Property Name="Tails1" Type="varchar" MaxLength="50" />
+          <Property Name="Tails2" Type="varchar" MaxLength="50" />
+          <Property Name="Reason" Type="varchar" MaxLength="500" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ManageShifts_Id" Type="int" />
+          <Property Name="AD_Id" Type="nvarchar" MaxLength="500" />
+          <Property Name="Unique_ID" Type="nvarchar" MaxLength="500" />
+          <Property Name="ShiftTime" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OPS_ManageAssets">
+          <Key>
+            <PropertyRef Name="Assets_Id" />
+          </Key>
+          <Property Name="Assets_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AssetType" Type="varchar" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OPS_ManageDowntime">
+          <Key>
+            <PropertyRef Name="ManageDowntime_Id" />
+          </Key>
+          <Property Name="ManageDowntime_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Assets" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="From" Type="nvarchar" MaxLength="100" />
+          <Property Name="To" Type="nvarchar" MaxLength="100" />
+          <Property Name="Reason" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Time_Diff" Type="int" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Assets_Id" Type="int" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="ToDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OPS_ManageShifts">
+          <Key>
+            <PropertyRef Name="ManageShifts_Id" />
+          </Key>
+          <Property Name="ManageShifts_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShiftsName" Type="varchar" MaxLength="50" />
+          <Property Name="Start_Time" Type="int" />
+        </EntityType>
+        <EntityContainer Name="opsdbModelStoreContainer">
+          <EntitySet Name="OPS_DataEntry" EntityType="Self.OPS_DataEntry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OPS_DeletedDataEntry" EntityType="Self.OPS_DeletedDataEntry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OPS_ManageAssets" EntityType="Self.OPS_ManageAssets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OPS_ManageDowntime" EntityType="Self.OPS_ManageDowntime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OPS_ManageShifts" EntityType="Self.OPS_ManageShifts" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="opsdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="OPS_ManageDowntime">
+          <Key>
+            <PropertyRef Name="ManageDowntime_Id" />
+          </Key>
+          <Property Name="ManageDowntime_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Assets" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="From" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="To" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Reason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Time_Diff" Type="Int32" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Assets_Id" Type="Int32" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="opsdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OPS_ManageDowntime" EntityType="Self.OPS_ManageDowntime" />
+          <EntitySet Name="OPS_DataEntry" EntityType="opsdbModel.OPS_DataEntry" />
+          <EntitySet Name="OPS_ManageShifts" EntityType="opsdbModel.OPS_ManageShifts" />
+          <EntitySet Name="OPS_ManageAssets" EntityType="opsdbModel.OPS_ManageAssets" />
+          <EntitySet Name="OPS_DeletedDataEntry" EntityType="opsdbModel.OPS_DeletedDataEntry" />
+        </EntityContainer>
+        <EntityType Name="OPS_DataEntry">
+          <Key>
+            <PropertyRef Name="DataEntry_Id" />
+          </Key>
+          <Property Name="DataEntry_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CV01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rougher" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HMC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FlocUse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FlocBatch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Slime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SlimePer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tails1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tails2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ManageShifts_Id" Type="Int32" />
+          <Property Name="AD_Id" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Unique_ID" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ShiftTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OPS_ManageShifts">
+          <Key>
+            <PropertyRef Name="ManageShifts_Id" />
+          </Key>
+          <Property Name="ManageShifts_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShiftsName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Start_Time" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OPS_ManageAssets">
+          <Key>
+            <PropertyRef Name="Assets_Id" />
+          </Key>
+          <Property Name="Assets_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssetType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OPS_DeletedDataEntry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataEntry_Id" Type="Int32" />
+          <Property Name="CV01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rougher" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HMC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FlocUse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FlocBatch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Slime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SlimePer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tails1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tails2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ManageShifts_Id" Type="Int32" />
+          <Property Name="AD_Id" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Unique_ID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ShiftTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="opsdbModelStoreContainer" CdmEntityContainer="opsdbEntities">
+          <EntitySetMapping Name="OPS_ManageDowntime">
+            <EntityTypeMapping TypeName="opsdbModel.OPS_ManageDowntime">
+              <MappingFragment StoreEntitySet="OPS_ManageDowntime">
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="Assets_Id" ColumnName="Assets_Id" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Time_Diff" ColumnName="Time_Diff" />
+                <ScalarProperty Name="ManageDowntime_Id" ColumnName="ManageDowntime_Id" />
+                <ScalarProperty Name="Assets" ColumnName="Assets" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="To" ColumnName="To" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPS_DataEntry">
+            <EntityTypeMapping TypeName="opsdbModel.OPS_DataEntry">
+              <MappingFragment StoreEntitySet="OPS_DataEntry">
+                <ScalarProperty Name="ShiftTime" ColumnName="ShiftTime" />
+                <ScalarProperty Name="Unique_ID" ColumnName="Unique_ID" />
+                <ScalarProperty Name="AD_Id" ColumnName="AD_Id" />
+                <ScalarProperty Name="ManageShifts_Id" ColumnName="ManageShifts_Id" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Tails2" ColumnName="Tails2" />
+                <ScalarProperty Name="Tails1" ColumnName="Tails1" />
+                <ScalarProperty Name="SlimePer" ColumnName="SlimePer" />
+                <ScalarProperty Name="Slime" ColumnName="Slime" />
+                <ScalarProperty Name="FlocBatch" ColumnName="FlocBatch" />
+                <ScalarProperty Name="FlocUse" ColumnName="FlocUse" />
+                <ScalarProperty Name="HMC" ColumnName="HMC" />
+                <ScalarProperty Name="Rougher" ColumnName="Rougher" />
+                <ScalarProperty Name="CV01" ColumnName="CV01" />
+                <ScalarProperty Name="DataEntry_Id" ColumnName="DataEntry_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPS_ManageShifts">
+            <EntityTypeMapping TypeName="opsdbModel.OPS_ManageShifts">
+              <MappingFragment StoreEntitySet="OPS_ManageShifts">
+                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+                <ScalarProperty Name="ShiftsName" ColumnName="ShiftsName" />
+                <ScalarProperty Name="ManageShifts_Id" ColumnName="ManageShifts_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPS_ManageAssets">
+            <EntityTypeMapping TypeName="opsdbModel.OPS_ManageAssets">
+              <MappingFragment StoreEntitySet="OPS_ManageAssets">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="AssetType" ColumnName="AssetType" />
+                <ScalarProperty Name="Assets_Id" ColumnName="Assets_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPS_DeletedDataEntry">
+            <EntityTypeMapping TypeName="opsdbModel.OPS_DeletedDataEntry">
+              <MappingFragment StoreEntitySet="OPS_DeletedDataEntry">
+                <ScalarProperty Name="ShiftTime" ColumnName="ShiftTime" />
+                <ScalarProperty Name="Unique_ID" ColumnName="Unique_ID" />
+                <ScalarProperty Name="AD_Id" ColumnName="AD_Id" />
+                <ScalarProperty Name="ManageShifts_Id" ColumnName="ManageShifts_Id" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Tails2" ColumnName="Tails2" />
+                <ScalarProperty Name="Tails1" ColumnName="Tails1" />
+                <ScalarProperty Name="SlimePer" ColumnName="SlimePer" />
+                <ScalarProperty Name="Slime" ColumnName="Slime" />
+                <ScalarProperty Name="FlocBatch" ColumnName="FlocBatch" />
+                <ScalarProperty Name="FlocUse" ColumnName="FlocUse" />
+                <ScalarProperty Name="HMC" ColumnName="HMC" />
+                <ScalarProperty Name="Rougher" ColumnName="Rougher" />
+                <ScalarProperty Name="CV01" ColumnName="CV01" />
+                <ScalarProperty Name="DataEntry_Id" ColumnName="DataEntry_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

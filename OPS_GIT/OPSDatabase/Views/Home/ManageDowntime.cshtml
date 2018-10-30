@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Manage Downtime";    
+}
+<div class="content-wrapper content-wrapper--with-bg">
+    <div class="page-content">
+        <div class="one">
+            <div class="row mb-4">
+                <div class="col-lg-12">
+                    <div class="alert shadow text-uppercase hidden-xs-down gap-25" role="alert">
+                        <span class="right-15">Manage Downtime</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card" data-border-color="cyan">
+                        <div class="card-header" data-background-color="cyan">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <input placeholder="Search..." type="text" class="col-sm-12" id="search" name="search" onkeyup="tableSearch()" />
+                                </div>
+                                <div class="col-lg-10 pl-0">
+                                    <form name="frmManageDowntime" method="post" action="@Url.Action("ExportToExcel","Home")">
+                                        <Select name="ddl_Assets" id="ddl_Assets" class="mr-2"></Select>
+                                        <input type="text" class="commondatepicker" name="searchDate" id="searchDate" autocomplete="off" data-date-end-date="0d" />                                    
+                                        <input type="button" class="btn btn-light" id="SearchBtn" value="Search" />
+                                        <input type="button" class="btn btn-light" id="ResetBtn" value="Reset" />
+                                        <input type="submit" class="btn btn-light" id="ExportBtn" value="Export" />                                      
+                                        <a class="btn btn-light" onclick="OpenAddNewDownTimeModal()">Add New</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content ds-responsive-tables">
+                            <table class="table table-hover table-striped" id="customTable">
+                                <thead class="">
+                                    <tr>
+                                        <th>Assets</th>
+                                        <th>Status</th>
+                                        <th>From</th>
+                                        <th>To</th>
+                                        <th>Total Time</th>
+                                        <th>Reason</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ManageDowntime">    
+                                </tbody>
+                            </table>
+                            <div class="row d-none">
+                                <div class="col-sm-6 pt-3"><span><b>Total Downtime:</b> <span id="totalDownTime"></span></span></div>                            
+                                <div class="col-sm-6 pt-3"><span class="float-right"><b>Total Runtime:</b> <span id="totalRuntime"></span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/managedowntime")
+}
+
+
+
+
+
+

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="opsdbModelStoreContainer" CdmEntityContainer="opsdbEntities">
+    <EntitySetMapping Name="OPS_ManageDowntime">
+      <EntityTypeMapping TypeName="opsdbModel.OPS_ManageDowntime">
+        <MappingFragment StoreEntitySet="OPS_ManageDowntime">
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="Assets_Id" ColumnName="Assets_Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Time_Diff" ColumnName="Time_Diff" />
+          <ScalarProperty Name="ManageDowntime_Id" ColumnName="ManageDowntime_Id" />
+          <ScalarProperty Name="Assets" ColumnName="Assets" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPS_DataEntry">
+      <EntityTypeMapping TypeName="opsdbModel.OPS_DataEntry">
+        <MappingFragment StoreEntitySet="OPS_DataEntry">
+          <ScalarProperty Name="ShiftTime" ColumnName="ShiftTime" />
+          <ScalarProperty Name="Unique_ID" ColumnName="Unique_ID" />
+          <ScalarProperty Name="AD_Id" ColumnName="AD_Id" />
+          <ScalarProperty Name="ManageShifts_Id" ColumnName="ManageShifts_Id" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Tails2" ColumnName="Tails2" />
+          <ScalarProperty Name="Tails1" ColumnName="Tails1" />
+          <ScalarProperty Name="SlimePer" ColumnName="SlimePer" />
+          <ScalarProperty Name="Slime" ColumnName="Slime" />
+          <ScalarProperty Name="FlocBatch" ColumnName="FlocBatch" />
+          <ScalarProperty Name="FlocUse" ColumnName="FlocUse" />
+          <ScalarProperty Name="HMC" ColumnName="HMC" />
+          <ScalarProperty Name="Rougher" ColumnName="Rougher" />
+          <ScalarProperty Name="CV01" ColumnName="CV01" />
+          <ScalarProperty Name="DataEntry_Id" ColumnName="DataEntry_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPS_ManageShifts">
+      <EntityTypeMapping TypeName="opsdbModel.OPS_ManageShifts">
+        <MappingFragment StoreEntitySet="OPS_ManageShifts">
+          <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+          <ScalarProperty Name="ShiftsName" ColumnName="ShiftsName" />
+          <ScalarProperty Name="ManageShifts_Id" ColumnName="ManageShifts_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPS_ManageAssets">
+      <EntityTypeMapping TypeName="opsdbModel.OPS_ManageAssets">
+        <MappingFragment StoreEntitySet="OPS_ManageAssets">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="AssetType" ColumnName="AssetType" />
+          <ScalarProperty Name="Assets_Id" ColumnName="Assets_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPS_DeletedDataEntry">
+      <EntityTypeMapping TypeName="opsdbModel.OPS_DeletedDataEntry">
+        <MappingFragment StoreEntitySet="OPS_DeletedDataEntry">
+          <ScalarProperty Name="ShiftTime" ColumnName="ShiftTime" />
+          <ScalarProperty Name="Unique_ID" ColumnName="Unique_ID" />
+          <ScalarProperty Name="AD_Id" ColumnName="AD_Id" />
+          <ScalarProperty Name="ManageShifts_Id" ColumnName="ManageShifts_Id" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Tails2" ColumnName="Tails2" />
+          <ScalarProperty Name="Tails1" ColumnName="Tails1" />
+          <ScalarProperty Name="SlimePer" ColumnName="SlimePer" />
+          <ScalarProperty Name="Slime" ColumnName="Slime" />
+          <ScalarProperty Name="FlocBatch" ColumnName="FlocBatch" />
+          <ScalarProperty Name="FlocUse" ColumnName="FlocUse" />
+          <ScalarProperty Name="HMC" ColumnName="HMC" />
+          <ScalarProperty Name="Rougher" ColumnName="Rougher" />
+          <ScalarProperty Name="CV01" ColumnName="CV01" />
+          <ScalarProperty Name="DataEntry_Id" ColumnName="DataEntry_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

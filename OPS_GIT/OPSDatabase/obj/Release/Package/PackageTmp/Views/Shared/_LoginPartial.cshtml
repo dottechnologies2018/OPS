@@ -1,0 +1,8 @@
+﻿@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+{
+    <li class="nav-item">
+        <a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">
+           <span class="animated shake mr-2">Hello  @User.Identity.Name</span><i class="fas fa-power-off"></i>
+        </a>
+    </li>
+}

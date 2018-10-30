@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="opsdbModelStoreContainer" CdmEntityContainer="opsdbEntities">
+    <EntitySetMapping Name="OPS_ManageDowntime">
+      <EntityTypeMapping TypeName="opsdbModel.OPS_ManageDowntime">
+        <MappingFragment StoreEntitySet="OPS_ManageDowntime">
+          <ScalarProperty Name="ManageDowntime_Id" ColumnName="ManageDowntime_Id" />
+          <ScalarProperty Name="Assets" ColumnName="Assets" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

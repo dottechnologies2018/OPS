@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Reporting Downtime";
+}
+
+<div class="content-wrapper content-wrapper--with-bg">
+    <div class="page-content">
+        <div class="one">
+            <div class="row mb-4">
+                <div class="col-lg-12">
+                    <div class="alert shadow text-uppercase hidden-xs-down gap-25" role="alert">
+                        <span class="right-15">Reporting Downtime</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card" data-border-color="cyan">
+                        <div class="card-header" data-background-color="cyan">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form class="" method="post" action="@Url.Action("Reporting_ExportDowntime","Home")" id="frmExcel">
+                                       
+                                        <div class="form-check-inline">
+                                            <div class="range-wrapper" style="position:relative;">
+                                                <label>From</label>
+                                                <input type="text" class="datepickerFrom" name="From" id="From" autocomplete="off" data-date-end-date="0d" />
+                                                <label for="From" class="Fromerror error d-none">Required</label>
+
+                                                <label>To</label>
+                                                <input type="text" class="datepickerTo" name="To" id="To" autocomplete="off" data-date-end-date="0d" />
+                                                <label for="To" class="Toerror error d-none">Required</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-check-inline float-right">
+                                            <input type="button" class="btn btn-light" id="Search" value="Search" />
+                                            <input type="submit" class="btn btn-light ml-2 mr-0" id="Export" value="Export" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ds-responsive-tables">
+                                        <table class="table table-hover table-striped d-none" id="customTable_Downtime">
+                                            <thead class="">
+                                                <tr>
+                                                    <th>Assets</th>
+                                                    <th>Status</th>
+                                                    <th>From</th>
+                                                    <th>To</th>
+                                                    <th>Total Time</th>
+                                                    <th>Reason</th>                                                 
+                                                </tr>
+                                            </thead>
+                                            <tbody id="Result_Downtime"></tbody>
+                                        </table>
+                                        <div class="row">
+                                            <div class="col-sm-6 pt-3"><span><b>Total Downtime:</b> <span id="totalDownTime"></span></span></div>
+                                            <div class="col-sm-6 pt-3"><span class="float-right"><b>Total Runtime:</b> <span id="totalRuntime"></span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/DataScripts/ManageReportingDowntime.js"></script>
+}
+

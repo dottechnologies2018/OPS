@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Reporting";
+}
+<div class="content-wrapper content-wrapper--with-bg">
+    <div class="page-content">
+        <div class="one">
+            <div class="row mb-4">
+                <div class="col-lg-12">
+                    <div class="alert shadow text-uppercase hidden-xs-down gap-25" role="alert">
+                        <span class="right-15">Reporting</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card" data-border-color="cyan">
+                        <div class="card-header" data-background-color="cyan">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form class="" method="post" action="@Url.Action("ExportToExcelParam","Home")" id="frmExcel">
+                                        <div class="form-check-inline">                                       
+                                            <select name="SelectedShifts" id="SelectedShifts">
+                                                <option value="0">All Shifts</option>
+                                                <option value="1" @(HttpContext.Current.Session["shiftID"].ToString() == "7" ? "selected" : "")>Day Shift</option>
+                                                <option value="2" @(HttpContext.Current.Session["shiftID"].ToString() == "19" ? "selected" : "")>Night Shift</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <div class="checkbox-wrapper">
+                                                <input type="checkbox" name="Hours" id="Hours" class="chb styled-checkbox" checked /><label for="Hours"> Last 24 Hours</label>
+                                                <input type="checkbox" name="Weeks" id="Weeks" class="chb styled-checkbox" /><label for="Weeks"> Week till date</label>
+                                                <input type="checkbox" name="Monthly" id="Monthly" class="chb styled-checkbox" /><label for="Monthly"> Month till date</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <div class="range-wrapper" style="position:relative;">
+                                                <label>From</label>
+                                                <input type="text" class="datepickerFrom" name="From" id="From" autocomplete="off" data-date-end-date="0d" />
+                                                <label for="From" class="Fromerror error d-none">Required</label>
+
+                                                <label>To</label>
+                                                <input type="text" class="datepickerTo" name="To" id="To" autocomplete="off" data-date-end-date="0d" />
+                                                <label for="To" class="Toerror error d-none">Required</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-check-inline float-right">
+                                            <input type="button" class="btn btn-light" id="Search" value="Search" />
+                                            <input type="submit" class="btn btn-light ml-2 mr-0" id="Export" value="Export" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ds-responsive-tables">
+                                        <table class="table table-hover table-striped d-none" id="customTable" data-request-url="@Url.Action("ExcelSearchParam","Home")">
+                                            <thead class="">
+                                                <tr>
+                                                    <th>Shift Time</th>
+                                                    <th>CVO1 (t)</th>
+                                                    <th>Rougher (t)</th>
+                                                    <th>HMC (t)</th>
+                                                    <th>Floc Use</th>
+                                                    <th>Floc Batch #</th>
+                                                    <th>Slime (t)</th>
+                                                    <th>Slime (%)</th>
+                                                    <th>Tails 1</th>
+                                                    <th>Tails 2</th>
+                                                    <th>Reason</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="Result"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ds-responsive-tables">
+                                        <table class="table table-hover table-striped d-none" id="customTable_Downtime" data-request-url="@Url.Action("Reporting_ManageDowntime","Home")">
+                                            <thead class="">
+                                                <tr>
+                                                    <th>Assets</th>
+                                                    <th>Status</th>
+                                                    <th>From</th>
+                                                    <th>To</th>
+                                                    <th>Total Time</th>
+                                                    <th>Reason</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="Result_Downtime"></tbody>
+                                        </table>
+                                        <div class="row">
+                                            <div class="col-sm-6 pt-3"><span><b>Total Downtime:</b> <span id="totalDownTime"></span></span></div>
+                                            <div class="col-sm-6 pt-3"><span class="float-right"><b>Total Runtime:</b> <span id="totalRuntime" data-request-url="@Url.Action("runtime","Home")">N/A</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")  
+    @Scripts.Render("~/bundles/managereporting")
+}
+
+
+
+

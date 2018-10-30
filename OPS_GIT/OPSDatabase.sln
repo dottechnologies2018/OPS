@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPSDatabase", "OPSDatabase\OPSDatabase.csproj", "{A8B35CC7-CFFF-46B4-AE91-C430A05917C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPSDatabase.DAL", "OPSDatabase.DAL\OPSDatabase.DAL.csproj", "{47B2DB24-A4FF-47A0-92AD-E151D0C8C62D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8B35CC7-CFFF-46B4-AE91-C430A05917C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B35CC7-CFFF-46B4-AE91-C430A05917C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B35CC7-CFFF-46B4-AE91-C430A05917C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B35CC7-CFFF-46B4-AE91-C430A05917C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47B2DB24-A4FF-47A0-92AD-E151D0C8C62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47B2DB24-A4FF-47A0-92AD-E151D0C8C62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47B2DB24-A4FF-47A0-92AD-E151D0C8C62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47B2DB24-A4FF-47A0-92AD-E151D0C8C62D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
