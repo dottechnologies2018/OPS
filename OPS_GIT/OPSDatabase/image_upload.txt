@@ -1,0 +1,33 @@
+ public void AddImage(string accountNumber, HttpPostedFileBase poImgFile)
+        {
+            byte[] imageData = null;
+            string imageType = "H";
+            string imageTag = "";
+
+            //output parameters
+            ObjectParameter returnProfileImageVal = new ObjectParameter("Return", typeof(bool));
+            ObjectParameter message3 = new ObjectParameter("message", typeof(string));
+
+            if (Request.Files.Count > 0)
+            {
+                imageTag = poImgFile.FileName;
+                string ImgName = poImgFile.FileName;
+                Stream imgStream = poImgFile.InputStream;
+                if (imgStream.Length > 0)
+                {
+                    Bitmap bmThumb = new Bitmap(imgStream);
+                    System.Drawing.Image im = bmThumb.GetThumbnailImage(100, 100, null, IntPtr.Zero);
+                    using (var binary = new BinaryReader(poImgFile.InputStream))
+                    {
+                        imageData = (Byte[])new ImageConverter().ConvertTo(im, typeof(Byte[]));
+                    }
+                    _dbContext.insert_Image(accountNumber, imageType, imageTag, imageData, message3, returnProfileImageVal);
+                }
+            }
+        }
+		
+		    if (ViewBag.ProfileImage != null)
+    {
+        var base64 = Convert.ToBase64String(ViewBag.ProfileImage);
+        imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+    }
