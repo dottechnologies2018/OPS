@@ -1,37 +1,4 @@
-if($order_status==="Success")
-	{
-	
-		$con = mysqli_connect("localhost","root","admin","newalahli",'3306');
-		
-		mysqli_query($con,"update payment_details set status = 1 where student_id = ".$userId." and fees_type = '".$testType."'");
+get/test/price
 
-		mysqli_close($con);
-
-		// Check connection
-		if (mysqli_connect_errno())
-		  {
-		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-		  }
-		  
-
-		echo '<input type="hidden" id="payment_response" value="1"/>';
-		echo "<br>Thank you for shopping with us. Your credit card has been charged and your transaction is successful. We will be shipping your order to you soon.";
-		
-	}
-	else if($order_status==="Aborted")
-	{
-		echo '<input type="hidden" id="payment_response" value="2"/>';
-		echo "<br>Thank you for shopping with us.We will keep you posted regarding the status of your order through e-mail";
-	
-	}
-	else if($order_status==="Failure")
-	{
-		echo '<input type="hidden" id="payment_response" value="3"/>';
-		echo "<br>Thank you for shopping with us.However,the transaction has been declined.";
-	}
-	else
-	{
-		echo '<input type="hidden" id="payment_response" value="4"/>';
-		echo "<br>Security Error. Illegal access detected";
-	
-	}
+	$testName 	= $request->input('test_name');
+		$category 	= $request->input('category');
