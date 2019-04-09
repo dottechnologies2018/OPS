@@ -2,3 +2,22 @@ get/test/price
 
 	$testName 	= $request->input('test_name');
 		$category 	= $request->input('category');
+
+
+if($testName == "MockTest"){
+			$testId = 1;
+		}else if($testName == "Thoerytest"){
+			$testId = 2;
+		}else if($testName == "RTAKnowledgeTest"){
+			$testId = 3;
+		}else if($testName == "RoadAssessmentTest"){
+			$testId = 4;
+		}else if($testName == "SmartYardAssessmentTest"){
+			$testId = 5;
+		}else if($testName == "SmartYardTest"){
+			$testId = 6;
+		}else if($testName == "RTARoadTest"){
+			$testId = 7;
+		}else{
+			$testId = 1;
+		}
