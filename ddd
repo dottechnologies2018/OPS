@@ -2,7 +2,7 @@ get/test/price
 
 	$testName 	= $request->input('test_name');
 		$category 	= $request->input('category');
-
+test_type
 
   case 0: {
                 obj.typeName = "Thoery";
