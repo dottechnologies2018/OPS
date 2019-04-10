@@ -1,2 +1,4 @@
 
 api/user/check/permit/expiry?user_id
+
+http://151.253.172.11:8091/api/MockTest?examid=12
