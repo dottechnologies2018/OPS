@@ -7,3 +7,4 @@ http://151.253.172.11:8091/api/MockTest?examid=12
       'questionID':questionId,
       'answerID':answerID
       }
+http://182.72.67.245/aadc_app/public/api/user/get-correct-answer?exam_id=12
