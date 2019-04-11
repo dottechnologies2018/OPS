@@ -12,3 +12,4 @@ http://182.72.67.245/aadc_app/public/api/user/get-correct-answer?exam_id=12
 
 
 Permit Renewal
+http://3.18.90.105/aadc_app/public/api/user/check/permit/expiry?user_id=2
